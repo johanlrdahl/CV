@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johan L. R. Dahl — CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --dark:       #1a3a3a;
+    --dark-hi:    #1f4444;
+    --accent:     #2a7a6a;
+    --accent-dim: rgba(42,122,106,0.5);
+    --muted:      #3d4a4a;
+    --faint:      #6b7f7f;
+    --light:      #f2f7f6;
+    --border:     #c8d8d5;
+    --white:      #ffffff;
+  }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--dark);
+    background: #dde4e3;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 12mm auto;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 63mm 1fr;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: linear-gradient(175deg, var(--dark-hi) 0%, var(--dark) 18%);
+    color: var(--white);
+    padding: 9mm 6mm 9mm 7mm;
+    display: flex;
+    flex-direction: column;
+    gap: 5.5mm;
+  }
+
+  .name-block { text-align: center; padding-bottom: 1mm; }
+  .name-block h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 1.15;
+    margin-bottom: 3px;
+  }
+  .name-block .tagline {
+    font-size: 7.5px;
+    font-weight: 300;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  .sidebar-section { display: flex; flex-direction: column; gap: 1.8mm; }
+
+  .sidebar-heading {
+    font-size: 7.5px;
+    font-weight: 500;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: var(--white);
+    opacity: 0.45;
+    border-bottom: 0.5px solid rgba(255,255,255,0.15);
+    padding-bottom: 1.5mm;
+    margin-bottom: 0.5mm;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5mm;
+    font-size: 8px;
+    opacity: 0.82;
+  }
+  .contact-item .icon { opacity: 0.5; flex-shrink: 0; margin-top: 0.5px; }
+
+  .skill-item {
+    font-size: 8px;
+    opacity: 0.82;
+    display: flex;
+    align-items: center;
+    gap: 2.5mm;
+    line-height: 1.4;
+  }
+  .skill-item::before {
+    content: '';
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.9;
+    flex-shrink: 0;
+  }
+
+  .sectors-list {
+    font-size: 8px;
+    opacity: 0.75;
+    line-height: 1.7;
+  }
+
+  .lang-item { display: flex; justify-content: space-between; font-size: 8px; opacity: 0.82; }
+  .lang-level { opacity: 0.5; font-size: 7.5px; }
+
+  .edu-item { margin-bottom: 2.5mm; }
+  .edu-degree { font-size: 8px; font-weight: 500; opacity: 0.88; }
+  .edu-school { font-size: 7.5px; opacity: 0.55; margin-top: 0.5px; }
+
+  .cert-item { font-size: 7.5px; opacity: 0.7; margin-bottom: 1.2px; line-height: 1.5; }
+
+  /* ── MAIN ── */
+  .main {
+    padding: 9mm 8mm 8mm 8mm;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5mm;
+  }
+
+  .section-title {
+    font-size: 7.5px;
+    font-weight: 500;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent-dim);
+    padding-bottom: 1mm;
+    margin-bottom: 3mm;
+  }
+
+  .summary {
+    font-size: 8.5px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .divider {
+    border: none;
+    border-top: 0.5px solid var(--border);
+  }
+
+  /* ── EMPLOYER GROUP ── */
+  .employer-group { display: flex; flex-direction: column; gap: 3mm; }
+
+  .employer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 1.2mm;
+    border-bottom: 1px solid var(--accent-dim);
+  }
+  .employer-name {
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2px;
+  }
+  .employer-tenure {
+    font-size: 7.5px;
+    color: var(--faint);
+  }
+
+  /* ── EXPERIENCE ITEMS ── */
+  .exp-grid { display: flex; flex-direction: column; gap: 3.5mm; }
+
+  .exp-item { display: grid; grid-template-columns: 1fr auto; gap: 0 3mm; }
+
+  .exp-role { font-size: 9px; font-weight: 500; color: var(--dark); }
+  .exp-sub  { font-size: 7.5px; color: var(--faint); font-weight: 300; margin-top: 1px; font-style: italic; }
+
+  .standalone-company { font-size: 8.5px; color: var(--accent); font-weight: 400; margin-top: 0.5px; }
+
+  .exp-bullets { margin-top: 1.5mm; padding-left: 3mm; }
+  .exp-bullets li {
+    font-size: 8px;
+    color: var(--muted);
+    margin-bottom: 1mm;
+    list-style: none;
+    position: relative;
+    line-height: 1.5;
+  }
+  .exp-bullets li::before {
+    content: '–';
+    position: absolute;
+    left: -3mm;
+    color: var(--border);
+  }
+
+  .exp-right { text-align: right; white-space: nowrap; padding-top: 1px; }
+  .exp-date  { font-size: 7.5px; color: var(--faint); }
+
+  .exp-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2mm;
+    margin-top: 2mm;
+  }
+  .exp-tech span {
+    font-size: 7px;
+    font-weight: 400;
+    color: var(--accent);
+    background: #eaf4f2;
+    border: 0.5px solid var(--border);
+    border-radius: 3px;
+    padding: 1px 4px;
+    letter-spacing: 0.2px;
+  }
+
+  @media print {
+    @page {
+      size: A4;
+      margin: 6mm 8mm;
+    }
+
+    body {
+      background: none;
+      font-size: 8px;
+      line-height: 1.38;
+    }
+
+    .page {
+      margin: 0;
+      width: 100%;
+      min-height: auto;
+      box-shadow: none;
+      grid-template-columns: 60mm 1fr;
+    }
+
+    .sidebar {
+      padding: 6mm 5mm 6mm 6mm;
+      gap: 3.8mm;
+    }
+
+    .name-block { padding-bottom: 0.5mm; }
+    .name-block h1 {
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+    .name-block .tagline {
+      font-size: 7px;
+      letter-spacing: 1.4px;
+    }
+
+    .sidebar-section { gap: 1.2mm; }
+
+    .sidebar-heading {
+      padding-bottom: 1mm;
+      margin-bottom: 0.3mm;
+    }
+
+    .contact-item,
+    .skill-item {
+      font-size: 7.5px;
+      gap: 2mm;
+    }
+
+    .sectors-list {
+      font-size: 7.5px;
+      line-height: 1.5;
+    }
+
+    .lang-item { font-size: 7.5px; }
+    .lang-level { font-size: 7px; }
+
+    .edu-degree { font-size: 7.5px; }
+    .edu-school { font-size: 7px; }
+    .edu-item { margin-bottom: 1.5mm; }
+
+    .cert-item {
+      font-size: 7px;
+      margin-bottom: 0.5px;
+      line-height: 1.4;
+    }
+
+    .main {
+      padding: 6mm 6mm 6mm 6mm;
+      gap: 3mm;
+    }
+
+    .section-title {
+      margin-bottom: 1.5mm;
+      padding-bottom: 0.6mm;
+    }
+
+    .summary {
+      font-size: 8px;
+      line-height: 1.5;
+    }
+
+    .divider {
+      margin: 0.8mm 0;
+    }
+
+    .employer-group { gap: 2mm; }
+
+    .employer-header {
+      padding-bottom: 0.8mm;
+    }
+
+    .exp-grid { gap: 2.2mm; }
+
+    .exp-role { font-size: 8.5px; }
+    .exp-sub,
+    .exp-date,
+    .employer-tenure { font-size: 7px; }
+
+    .standalone-company { font-size: 8px; }
+
+    .exp-bullets {
+      margin-top: 1mm;
+    }
+    .exp-bullets li {
+      font-size: 7.75px;
+      margin-bottom: 0.5mm;
+      line-height: 1.35;
+    }
+
+    .exp-tech {
+      margin-top: 1mm;
+      gap: 0.8mm;
+    }
+    .exp-tech span {
+      font-size: 6.5px;
+      padding: 0 3px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="name-block">
+      <h1>Johan L. R. Dahl</h1>
+      <p class="tagline">Industrial AI · Data Architecture · Leadership</p>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Contact</div>
+      <div class="contact-item"><span class="icon">✉</span><span>johanlow@gmail.com</span></div>
+      <div class="contact-item"><span class="icon">✆</span><span>+47 920 57 822</span></div>
+      <div class="contact-item"><span class="icon">⌂</span><span>Stavanger, Norway</span></div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Expertise</div>
+      <div class="skill-item">Industrial AI &amp; Operational Technology (OT)</div>
+      <div class="skill-item">Generative AI &amp; LLMs</div>
+      <div class="skill-item">Data &amp; Solution Architecture</div>
+      <div class="skill-item">Industrial Data Platforms (Cognite CDF)</div>
+      <div class="skill-item">Machine Learning</div>
+      <div class="skill-item">Team Leadership &amp; Management</div>
+      <div class="skill-item">Cloud: Azure, GCP, Databricks</div>
+      <div class="skill-item">Python, FastAPI, React.js</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Sectors</div>
+      <div class="sectors-list">Oil &amp; Gas · Offshore Energy · Renewables · Manufacturing · Maritime · Public Sector</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Languages</div>
+      <div class="lang-item"><span>Norwegian</span><span class="lang-level">Native</span></div>
+      <div class="lang-item"><span>English</span><span class="lang-level">Fluent</span></div>
+      <div class="lang-item"><span>French</span><span class="lang-level">Fluent</span></div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Education</div>
+      <div class="edu-item">
+        <div class="edu-degree">MSc Industrial Mathematics</div>
+        <div class="edu-school">NTNU · 2000–2005</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Master in Management</div>
+        <div class="edu-school">CERAM European School of Business · 2005–2007</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Certifications</div>
+      <div class="cert-item">Azure Fundamentals (AZ-900) · 2020</div>
+      <div class="cert-item">Power BI Desktop · 2021</div>
+      <div class="cert-item">Scrum Master Certification · 2019</div>
+      <div class="cert-item">Machine Learning – Andrew Ng · 2020</div>
+      <div class="cert-item">Compute / AI / Networking Curriculum · 2025</div>
+      <div class="cert-item">QlikView 11 Developer &amp; Designer · 2017</div>
+      <div class="cert-item">IBM Advanced DataStage · 2013</div>
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <section>
+      <div class="section-title">Profile</div>
+      <p class="summary">Technologist and leader with 20 years at the intersection of industrial operations and AI. Specialist in turning complex operational technology data — sensors, process systems, 3D models — into scalable AI applications that deliver measurable impact in energy and industry. Track record of building and leading high-performing data science teams, architecting cloud-native data platforms, and driving digital transformation from concept to production.</p>
+    </section>
+
+    <hr class="divider">
+
+    <section>
+      <div class="section-title">Experience</div>
+      <div class="exp-grid">
+
+        <!-- SOPRA STERIA GROUP -->
+        <div class="employer-group">
+          <div class="employer-header">
+            <span class="employer-name">Sopra Steria</span>
+            <span class="employer-tenure">Aug 2025 – present</span>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-left">
+              <div class="exp-role">Regional Community Lead for Data Intelligence, Rogaland</div>
+              <ul class="exp-bullets">
+                <li>Community lead for Data Intelligence across the Stavanger region; driving knowledge sharing and technical excellence</li>
+                <li>Building internal AI capabilities and identifying commercial opportunities within energy and industry</li>
+              </ul>
+            </div>
+            <div class="exp-right"><div class="exp-date">Aug 2025 – present</div></div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-left">
+              <div class="exp-role">Data Architect — Aker BP / ADA</div>
+              <div class="exp-sub">On assignment at one of Norway's largest offshore E&amp;P operators</div>
+              <ul class="exp-bullets">
+                <li>Advancing enterprise data architecture within Cognite Data Fusion as part of the Aker Digital Alliance</li>
+                <li>Transitioning from legacy asset-centric models to modern data modelling; enabling scalable integration across offshore platforms</li>
+                <li>Foundational architecture work supporting AI-driven predictive maintenance across drilling, wells, and production</li>
+              </ul>
+              <div class="exp-tech">
+                <span>Cognite Data Fusion</span><span>Data Modelling</span><span>Solution Architecture</span><span>Stakeholder Management</span>
+              </div>
+            </div>
+            <div class="exp-right"><div class="exp-date">Nov 2025 – present</div></div>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ADVANIA -->
+        <div class="exp-item">
+          <div class="exp-left">
+            <div class="exp-role">Team Manager &amp; Solution Architect</div>
+            <div class="standalone-company">Advania Norge</div>
+            <ul class="exp-bullets">
+              <li>Built and scaled the AI delivery team in Stavanger; people management, resource planning, and recruitment</li>
+              <li>Designed and delivered AI-driven applications (Python / FastAPI / React.js) on Azure; CI/CD with Bicep &amp; ARM</li>
+              <li>Led generative AI projects in public transport, shipping optimisation, and enterprise automation</li>
+              <li>Pre-sales: solution design, proposals, and customer presentations</li>
+            </ul>
+            <div class="exp-tech">
+              <span>Python</span><span>FastAPI</span><span>React.js</span><span>Azure AI Foundry</span><span>Azure Container Apps</span><span>Microsoft Fabric</span>
+            </div>
+          </div>
+          <div class="exp-right"><div class="exp-date">Jul 2024 – Jun 2025</div></div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- COGNITE -->
+        <div class="exp-item">
+          <div class="exp-left">
+            <div class="exp-role">Solution Architect · Head of Data Science</div>
+            <div class="standalone-company">Cognite AS</div>
+            <ul class="exp-bullets">
+              <li>Shaped Cognite Data Fusion into a scalable Industrial IoT platform serving oil &amp; gas, renewables, and manufacturing clients; integrated real-time OT data — sensors, 3D models, and process diagrams — into production AI applications</li>
+              <li>As Head of Data Science: defined strategy, methodology, and model lifecycle for a global team; managed recruitment, onboarding, and skill development across international data scientists and analysts</li>
+              <li>Delivered predictive maintenance and production optimisation use cases using Databricks, Azure, and GCP — with documented operational impact for industrial clients</li>
+              <li>Contributed improvements to Cognite's open-source Python SDK; strengthened reusable, testable code practices across the developer community</li>
+            </ul>
+            <div class="exp-tech">
+              <span>Cognite Data Fusion</span><span>Databricks</span><span>Azure</span><span>GCP</span><span>Python</span><span>Docker</span><span>GitHub Actions</span><span>PostgreSQL</span><span>Terraform</span>
+            </div>
+          </div>
+          <div class="exp-right"><div class="exp-date">Jun 2018 – Jun 2024</div></div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- VISMA -->
+        <div class="exp-item">
+          <div class="exp-left">
+            <div class="exp-role">Senior Solution Architect</div>
+            <div class="standalone-company">Visma bWise</div>
+            <ul class="exp-bullets">
+              <li>Delivered BI solutions (QlikView / Qlik Sense) and data governance frameworks for Nordic clients; training and knowledge transfer throughout project lifecycle</li>
+            </ul>
+          </div>
+          <div class="exp-right"><div class="exp-date">May 2016 – May 2018</div></div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- IBM -->
+        <div class="exp-item">
+          <div class="exp-left">
+            <div class="exp-role">Senior Consultant</div>
+            <div class="standalone-company">IBM</div>
+            <ul class="exp-bullets">
+              <li>Applied IBM Watson (NLP, cognitive computing) to reduce production losses in oil &amp; gas; business analytics &amp; optimisation</li>
+            </ul>
+          </div>
+          <div class="exp-right"><div class="exp-date">Apr 2012 – Apr 2016</div></div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ACCENTURE -->
+        <div class="exp-item">
+          <div class="exp-left">
+            <div class="exp-role">Consultant</div>
+            <div class="standalone-company">Accenture</div>
+            <ul class="exp-bullets">
+              <li>Systems integration, data warehouse, ETL design, and management consulting for large public-sector client</li>
+            </ul>
+          </div>
+          <div class="exp-right"><div class="exp-date">Aug 2007 – Mar 2012</div></div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>
