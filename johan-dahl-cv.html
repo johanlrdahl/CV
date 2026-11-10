@@ -41,6 +41,33 @@
     box-shadow: 0 4px 32px rgba(0,0,0,0.12);
   }
 
+  .view-switcher {
+    max-width: 210mm;
+    margin: 8mm auto -6mm auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    font-size: 11px;
+  }
+  .view-switcher a {
+    color: var(--dark);
+    text-decoration: none;
+    background: var(--white);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .view-switcher a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .view-switcher a.active {
+    background: var(--dark);
+    color: var(--white);
+    border-color: var(--dark);
+  }
+
   /* ── SIDEBAR ── */
   .sidebar {
     background: linear-gradient(175deg, var(--dark-hi) 0%, var(--dark) 18%);
@@ -88,6 +115,13 @@
     gap: 2.5mm;
     font-size: 8px;
     opacity: 0.82;
+  }
+  .contact-item a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .contact-item a:hover {
+    text-decoration: underline;
   }
   .contact-item .icon { opacity: 0.5; flex-shrink: 0; margin-top: 0.5px; }
 
@@ -233,6 +267,10 @@
       line-height: 1.38;
     }
 
+    .view-switcher {
+      display: none;
+    }
+
     .page {
       margin: 0;
       width: 100%;
@@ -342,6 +380,12 @@
 </style>
 </head>
 <body>
+
+<nav class="view-switcher">
+  <a href="index.html" class="active">1-Page Summary CV</a>
+  <a href="johan-dahl-cv-detailed.html">Detailed CV</a>
+</nav>
+
 <div class="page">
 
   <!-- SIDEBAR -->
@@ -354,8 +398,9 @@
 
     <div class="sidebar-section">
       <div class="sidebar-heading">Contact</div>
-      <div class="contact-item"><span class="icon">✉</span><span>johanlow@gmail.com</span></div>
+      <div class="contact-item"><span class="icon">✉</span><a href="mailto:johanlow@gmail.com">johanlow@gmail.com</a></div>
       <div class="contact-item"><span class="icon">✆</span><span>+47 920 57 822</span></div>
+      <div class="contact-item"><span class="icon">in</span><a href="https://www.linkedin.com/in/johan-l%C3%B8wig-rambech-dahl-38a6675" target="_blank" rel="noopener">linkedin.com/in/johan-l-r-dahl</a></div>
       <div class="contact-item"><span class="icon">⌂</span><span>Stavanger, Norway</span></div>
     </div>
 
@@ -391,19 +436,20 @@
       </div>
       <div class="edu-item">
         <div class="edu-degree">Master in Management</div>
-        <div class="edu-school">CERAM European School of Business · 2005–2007</div>
+        <div class="edu-school">CERAM (SKEMA Business School) · 2005–2007</div>
       </div>
     </div>
 
     <div class="sidebar-section">
       <div class="sidebar-heading">Certifications</div>
-      <div class="cert-item">Azure Fundamentals (AZ-900) · 2020</div>
+      <div class="cert-item">AI-Akademiet (Sopra Steria) · 2026</div>
+      <div class="cert-item">NVIDIA AI, Compute &amp; Networking · 2025</div>
+      <div class="cert-item">Foundations of Strategy · 2024</div>
       <div class="cert-item">Power BI Desktop · 2021</div>
-      <div class="cert-item">Scrum Master Certification · 2019</div>
+      <div class="cert-item">Azure Fundamentals (AZ-900) · 2020</div>
       <div class="cert-item">Machine Learning – Andrew Ng · 2020</div>
-      <div class="cert-item">Compute / AI / Networking Curriculum · 2025</div>
-      <div class="cert-item">QlikView 11 Developer &amp; Designer · 2017</div>
-      <div class="cert-item">IBM Advanced DataStage · 2013</div>
+      <div class="cert-item">The Science of Leadership · 2020</div>
+      <div class="cert-item">Scrum Master Certification · 2019</div>
     </div>
 
   </aside>
@@ -413,7 +459,7 @@
 
     <section>
       <div class="section-title">Profile</div>
-      <p class="summary">Technologist and leader with 20 years at the intersection of industrial operations and AI. Specialist in turning complex operational technology data — sensors, process systems, 3D models — into scalable AI applications that deliver measurable impact in energy and industry. Track record of building and leading high-performing data science teams, architecting cloud-native data platforms, and driving digital transformation from concept to production.</p>
+      <p class="summary">Technologist and leader with 20 years at the intersection of industrial operations and AI. Specialist in turning complex operational technology data (sensors, process systems, and 3D models) into scalable AI applications that deliver measurable impact in energy and industry. Track record of building and leading high-performing data science teams, architecting cloud-native data platforms, and driving digital transformation from concept to production.</p>
     </section>
 
     <hr class="divider">
@@ -433,8 +479,9 @@
             <div class="exp-left">
               <div class="exp-role">Regional Community Lead for Data Intelligence, Rogaland</div>
               <ul class="exp-bullets">
-                <li>Community lead for Data Intelligence across the Stavanger region; driving knowledge sharing and technical excellence</li>
+                <li>Leading Sopra Steria's Data Intelligence &amp; AI community across Stavanger and Haugesund; driving technical excellence and knowledge sharing</li>
                 <li>Building internal AI capabilities and identifying commercial opportunities within energy and industry</li>
+                <li>Responsible for regional recruitment and growing the Data Intelligence team</li>
               </ul>
             </div>
             <div class="exp-right"><div class="exp-date">Aug 2025 – present</div></div>
@@ -443,14 +490,14 @@
           <div class="exp-item">
             <div class="exp-left">
               <div class="exp-role">Data Architect — Aker BP / ADA</div>
-              <div class="exp-sub">On assignment at one of Norway's largest offshore E&amp;P operators</div>
+              <div class="exp-sub">On assignment at one of Norway's largest offshore E&amp;P operators (N-DIGI &amp; Remote Operations)</div>
               <ul class="exp-bullets">
-                <li>Advancing enterprise data architecture within Cognite Data Fusion as part of the Aker Digital Alliance</li>
-                <li>Transitioning from legacy asset-centric models to modern data modelling; enabling scalable integration across offshore platforms</li>
-                <li>Foundational architecture work supporting AI-driven predictive maintenance across drilling, wells, and production</li>
+                <li>Advancing enterprise data architecture within Cognite Data Fusion as part of the transition from legacy asset-centric models to modern CDF data modelling across Aker BP's offshore platforms</li>
+                <li>Designing and implementing new data models, setting data-source onboarding priorities, and planning platform scaling for AI and digital-twin use cases driven primarily by the Yggdrasil field development</li>
+                <li>Working directly with operational users and platform vendors to turn domain requirements into durable architectural decisions</li>
               </ul>
               <div class="exp-tech">
-                <span>Cognite Data Fusion</span><span>Data Modelling</span><span>Solution Architecture</span><span>Stakeholder Management</span>
+                <span>Cognite Data Fusion</span><span>CDF Data Modelling</span><span>Solution Architecture</span><span>Stakeholder Management</span>
               </div>
             </div>
             <div class="exp-right"><div class="exp-date">Nov 2025 – present</div></div>
@@ -463,7 +510,7 @@
         <div class="exp-item">
           <div class="exp-left">
             <div class="exp-role">Team Manager &amp; Solution Architect</div>
-            <div class="standalone-company">Advania Norge</div>
+            <div class="standalone-company">Advania Norge (formerly Solv)</div>
             <ul class="exp-bullets">
               <li>Built and scaled the AI delivery team in Stavanger; people management, resource planning, and recruitment</li>
               <li>Designed and delivered AI-driven applications (Python / FastAPI / React.js) on Azure; CI/CD with Bicep &amp; ARM</li>
@@ -485,9 +532,9 @@
             <div class="exp-role">Solution Architect · Head of Data Science</div>
             <div class="standalone-company">Cognite AS</div>
             <ul class="exp-bullets">
-              <li>Shaped Cognite Data Fusion into a scalable Industrial IoT platform serving oil &amp; gas, renewables, and manufacturing clients; integrated real-time OT data — sensors, 3D models, and process diagrams — into production AI applications</li>
-              <li>As Head of Data Science: defined strategy, methodology, and model lifecycle for a global team; managed recruitment, onboarding, and skill development across international data scientists and analysts</li>
-              <li>Delivered predictive maintenance and production optimisation use cases using Databricks, Azure, and GCP — with documented operational impact for industrial clients</li>
+              <li>Shaped Cognite Data Fusion into a scalable Industrial IoT platform for oil &amp; gas, renewables, and manufacturing clients, integrating real-time OT data such as sensors, 3D models, and process diagrams into production AI applications</li>
+              <li>As Head of Data Science: led a global team of data scientists and analysts, setting the strategy and engineering standards for developing, validating, and operating ML models in production, while managing recruitment, onboarding, and skill development</li>
+              <li>Delivered predictive maintenance and production optimisation solutions on Databricks, Azure, and GCP with documented operational impact for industrial clients</li>
               <li>Contributed improvements to Cognite's open-source Python SDK; strengthened reusable, testable code practices across the developer community</li>
             </ul>
             <div class="exp-tech">
@@ -503,7 +550,7 @@
         <div class="exp-item">
           <div class="exp-left">
             <div class="exp-role">Senior Solution Architect</div>
-            <div class="standalone-company">Visma bWise</div>
+            <div class="standalone-company">Visma bWise (now Twoday)</div>
             <ul class="exp-bullets">
               <li>Delivered BI solutions (QlikView / Qlik Sense) and data governance frameworks for Nordic clients; training and knowledge transfer throughout project lifecycle</li>
             </ul>
@@ -519,7 +566,7 @@
             <div class="exp-role">Senior Consultant</div>
             <div class="standalone-company">IBM</div>
             <ul class="exp-bullets">
-              <li>Applied IBM Watson (NLP, cognitive computing) to reduce production losses in oil &amp; gas; business analytics &amp; optimisation</li>
+              <li>Business analytics, process optimisation, and cognitive computing (IBM Watson / NLP) for clients in oil &amp; gas</li>
             </ul>
           </div>
           <div class="exp-right"><div class="exp-date">Apr 2012 – Apr 2016</div></div>
@@ -533,7 +580,7 @@
             <div class="exp-role">Consultant</div>
             <div class="standalone-company">Accenture</div>
             <ul class="exp-bullets">
-              <li>Systems integration, data warehouse, ETL design, and management consulting for large public-sector client</li>
+              <li>Database &amp; data warehouse design, ETL, reporting solutions, and management consulting for large public-sector client</li>
             </ul>
           </div>
           <div class="exp-right"><div class="exp-date">Aug 2007 – Mar 2012</div></div>

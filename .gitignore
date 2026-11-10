@@ -1,0 +1,11 @@
+# Local workspace directories
+.cursor/
+.cursor/**
+applications/
+skills/
+
+# Generated PDFs (HTML files are the source of truth)
+*.pdf
+
+# macOS / Editor artifacts
+.DS_Store
